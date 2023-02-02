@@ -26,9 +26,15 @@ export default function Detail(props) {
                 <h2>Subregion: {myCountry[0].subregion}</h2>
                 <h2>Area: {myCountry[0].area}</h2>
                 <h2>Population: {myCountry[0].population}</h2>
-                <h2>tactivities: {myCountry[0].tactivities.map(el => {
+                <h2>Activities: {myCountry[0].tactivities.map(el => {
                     return (
+                        <>
                         <h5>{el.name}</h5>
+                        <h5>{el.difficulty}</h5>
+                        <h5>{el.duration}</h5>
+                        <h5>{el.season}</h5>
+            
+                        </>
                     )
                 }
                  )

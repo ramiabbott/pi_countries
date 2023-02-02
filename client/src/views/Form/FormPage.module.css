@@ -1,0 +1,19 @@
+.mainConteiner {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin: 2rem 10rem;
+}
+.optionForm {
+    display: flex;
+    flex-direction: row;
+}
+
+.segundo {
+    width: 300px;
+    height: 25px;
+}
+
+.primero {
+    width: 20%;
+}

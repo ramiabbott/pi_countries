@@ -7,7 +7,8 @@ import  { GET_COUNTRIES,
         GET_ALL_ACTIVITIES,
         GET_DETAIL,
         GET_BY_NAME,
-        CREATE_ACTIVITIES
+        CREATE_ACTIVITIES,
+        BY_TACTIVITIES
     }  from './action-Type';
 
 
@@ -120,3 +121,10 @@ export function createActivities (payload) {
         
     }  
 }
+
+export function bytactivities ()  {
+    return {
+        type: BY_TACTIVITIES,
+       
+    }
+} 

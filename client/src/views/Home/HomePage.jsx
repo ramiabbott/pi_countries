@@ -7,6 +7,7 @@ import {
   orderByCriteria,
   orderByPopulation,
   getActivities,
+  bytactivities
 } from "../../redux/action/action";
 import { Link } from "react-router-dom";
 import Card from "../../components/Card";
@@ -77,6 +78,10 @@ const Home = () => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
   };
 
+  const handleFilterAct = (e) => {
+    dispatch(bytactivities())
+
+  }
   return (
     
     <>
@@ -84,9 +89,6 @@ const Home = () => {
           <NavBar />
           <div>
             <div>
-              <div>
-                <p>{filterIsActive ? "Hide" : "Show"} Filters</p>
-              </div>
               <button onClick={() => setFilterIsActive(!filterIsActive)}>
                 {filterIsActive ? <IoArrowUp /> : <IoArrowDown />}
               </button>
@@ -128,16 +130,11 @@ const Home = () => {
           <option value="North America">Norte America</option>
         </select>
         {/* <label htmlFor='activity'>Filter by Activity</label> */}
-        <select name="activity" id="activity" onChange={(e) => handleFilter(e)}>
-          <option value="0">Filter by Activity</option>
-          {tactivity?.map((a) => {
-            return (
-              <option key={a.tactivity_id} value={a.tactivity_id}>
-                {a.name}
-              </option>
-            );
-          })}
-        </select>
+        {/* <select name="activity" id="activity" onChange={(e) => handleFilterAct(e)}>
+          <option value="all">Filter by Activity</option> */}
+          <button onClick={handleFilterAct}>Creados</button>
+          
+        {/* </select> */}
         <Paginado
           countriesPerPage={countriesPerPage}
           allCountries={allCountries.length}

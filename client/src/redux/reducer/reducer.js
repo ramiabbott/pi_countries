@@ -10,7 +10,8 @@ import {
     GET_ALL_ACTIVITIES,
     GET_DETAIL,
     GET_BY_NAME,
-    CREATE_ACTIVITIES
+    CREATE_ACTIVITIES,
+    BY_TACTIVITIES
 } from '../action/action-Type'
 
 
@@ -108,6 +109,13 @@ function rootReducer (state=initialState, action) {
                 return {
                     ...state,
                     formActivities: action.payload
+                }
+            case BY_TACTIVITIES:
+                const actfilter =  state.countriesCopy.filter(e => e.tactivities.length > 0) 
+                console.log(actfilter)
+                return {
+                    ...state,
+                    countries: actfilter
                 }
     	default:
 			return state
